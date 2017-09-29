@@ -19,7 +19,7 @@ def calculate_intercept(inputx, inputy, bet):
 
 def calculate_prediction(inputx, inter, be):
     predic = []
-    for row in range(0,len(inputx)-1):
+    for row in range(0,len(inputx)):
         inputx_0 = be[0] * inputx.iloc[[row],[0]]
         inputx_1 = be[1] * inputx.iloc[[row],[1]]
         inputx_2 = be[2] * inputx.iloc[[row],[2]]
@@ -32,7 +32,7 @@ def calculate_prediction(inputx, inter, be):
 
 def calculate_accuracy(x,y, pr):
     count_of_mismatch = len(x)
-    for val in range(0,len(x)-1):
+    for val in range(0,len(x)):
         if (int(pr.__getitem__(val)) == int(y.iloc[val])):
             count_of_mismatch = count_of_mismatch - 1
     return count_of_mismatch
